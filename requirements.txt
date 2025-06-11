@@ -10,4 +10,3 @@ tqdm
 markdown
 python-multipart
 setuptools
-mangum
