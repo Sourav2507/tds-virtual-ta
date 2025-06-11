@@ -101,6 +101,7 @@ async def search_knowledge_base(query, limit=2):
 @app.post("/api/")
 async def answer_question(request: QueryRequest):
     try:
+        print("API_KEY =", API_KEY)
         top_chunks = await search_knowledge_base(request.question, limit=3)
         answer = f"Best guess based on knowledge base for: '{request.question}'"
         links = [{"url": c["source"], "text": c["source"]} for c in top_chunks]
